@@ -1,4 +1,9 @@
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const request = require('request');
 
 mongoose
   .connect(
@@ -15,12 +20,6 @@ mongoose
   .catch((err) => {
     console.error('Error connecting to the database:', err.message);
   });
-const bodyParser = require('body-parser');
-
-const express = require('express');
-const app = express();
-const cors = require('cors');
-const request = require('request');
 
 const favouriteMovie = require('./models/favouriteModel');
 
